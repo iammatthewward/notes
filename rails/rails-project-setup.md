@@ -72,7 +72,7 @@
 
 ## Rails forms
   * Rails has helpers for creating HTML forms, since they are a common way to get data in web apps
-    - example `form_for` helper for haml:
+    - example `form_for` helper for erb:
     ```
     <%= form_for @*model* do |f| %>
       <%= f.label :*parameter* %>
@@ -80,7 +80,7 @@
       <%= f.submit %>
     <% end %>
     ```
-    - example `form_for` helper for erb:
+    - example `form_for` helper for haml:
     ```
     = form_for @*model* do |f|
       = f.label :*parameter*
