@@ -1,3 +1,24 @@
+***UNDER CONSTRUCTION***
+
+
+## Index
+* [Rails Project Set Up](#rails-project-set-up)
+* [General Rails Commands](#general-rails-commands)
+* [Creating An App](#creating-an-app)
+* [Testing](#testing)
+* [Routing](#routing)
+* [Controllers](#controllers)
+* [Views](#views)
+* [Models](#models)
+* [Migrations](#migrations)
+* [Associations](#associations)
+* [Rails forms](#rails-forms)
+* [Rails links](#rails-links)
+* [Validations](#validations)
+* [Testing](#testing)
+* [Application helpers](#application-helpers)
+* [Unit testing validation](#unit-testing-validation)
+
 # Rails Project Set Up
   * `gem install rails` installs the Rails gem
 
@@ -9,7 +30,6 @@
   * `bin/rails g controller controller-name` will generate a controller file in `app/controllers` and associated files
   * `bin/rails g model *model-name* *property*: *property-type*` creates models
   * `bin/rails g migration *AddParameterToModel* *parameter*:*format*` creates a migration
-
 
 ## Creating An App
   * `rails new app_name` with the your app name on place of 'app_name' creates a basic app

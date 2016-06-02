@@ -1,22 +1,43 @@
+***UNDER CONSTRUCTION***
+
 # Angular
   * Angular runs on the browser, meaning an Angular app can be a server-less static site.
   * Two way data binding: you can bind data to an input and Angular will automatically update what is bound to that on your Angular side. Angular magic! TBC
   * Angular is not technically MVC, more MVVM (model | view model | view), with the view model being the controller
 
+## Index
+* [Directives](#directives)
+* [Running Angular tests](#running-angular-tests)
+* [Angular modules](#angular-modules)
+* [Angular controllers](#angular-controllers)
+* [Controller expressions](#controller-expressions)
+* [Mustache syntax](#mustache-syntax)
+* [Model directive](#model-directive)
+* [Angular models](#model-directive)
+* [Factories vs. services](#factories-vs-services)
+* [Factories](#factories)
+* [Services](#services)
+* [Using a service to get data from an API](#using-a-service-to-get-data-from-an-api)
+* [Setting up an Angular app with NPM & Bower, using Protractor/Karma for testing](#setting-up-an-angular-app-with-npm--bower-using-protractorkarma-for-testing)
+* [Setting up Protractor](#setting-up-protractor)
+* [Create a Protractor config file](#create-a-protractor-config-file)
+* [Running tests](#running-tests)
+
 ## Directives
-  * Angular's custom HTML tags which go into your HTML to link up an Angular app.
+  ***Angular's custom HTML tags which go into your HTML to link up an Angular app.***
   * `ng-app="*appName*"` - specify the app for your HTML (located in HTML tag).
-  * `ng-controller="*controller-name* as ctrl"` - specify the controller to be used (located in a div).
+  * `ng-controller="*controller-name* as ctrl"` - specify the controller to be used (located in div tag).
   * `ng-click="ctrl.*expression*"` - specify the controller expression that should be accessed when a click event happens.
   * `ng-repeat="*object* in ctrl*collection* {{ *object*.*parameter* }}` - iterate over a collection of items (in conjunction with mustache tags).
-  * `ng-model="*parameter-name*"` - applied to HTML tags(such as inputs) passes the value of the tag as a parameter (in conjunction with event based directives such as `ng-click="ctrl.*expression*"`).
+  * `ng-model="*parameter-name*"` - applied to HTML tags (such as inputs), passes the value of the tag as a parameter (in conjunction with event based directives such as `ng-click="ctrl.*expression*"`).
 
 ## Running Angular tests
-  * To run tests, the following need to be running and open:
+  * To run tests (using Protractor and Karma), the following need to be running and open (in their own terminal tab):
     * Run the http server: `npm run start`
     * Run the Selenium server: `npm run webdriver-manager start`
-  * Run Karma tests: `karma start test/karma.conf.js`
-  * Run Protractor tests: `npm run protractor test/protractor.conf.js`
+  * In a third terminal tab, run the following to run tests:
+    * Run Karma tests: `karma start test/karma.conf.js`
+    * Run Protractor tests: `npm run protractor test/protractor.conf.js`
 
 ## Angular modules
   * Everything in Angular is split into modules, which are similar to classes in OOP.
@@ -56,7 +77,7 @@
   * Services are used for anything else, like connecting to APIs.
 
 ### Factories vs. services
-[source]('http://stackoverflow.com/questions/15666048/angularjs-service-vs-provider-vs-factory')
+[source](http://stackoverflow.com/questions/15666048/angularjs-service-vs-provider-vs-factory)
 * When declaring a service as an injectable argument, you are provided an instance of the function.
 * When declaring a function as an injectable argument, you are provided with the value returned by invoking the function.
 * When using a service it is instantiated for you by Angular (using the 'new' keyword behind the scenes), so you will be adding properties to 'this', and the service returns 'this'. When accessing a service via a controller, the properties defined on 'this' are available to the controller through the service.
@@ -160,12 +181,14 @@ exports.config = {
 * Add the follwing script within the 'scripts' section of the `package.json` file: `"protractor": "./node_modules/protractor/bin/protractor"`
 
 ### Running tests
-* In their own terminal tabs, run the following commands to run the Selenium and Karma servers:
-  * `npm run webdriver-manager start`
-  * ``
-* In a separate terminal tab, use the following to run your tests: `npm run protractor test/protractor.conf.js`.
+* To run tests (using Protractor and Karma), the following need to be running and open (in their own terminal tab):
+  * Run the http server: `npm run start`
+  * Run the Selenium server: `npm run webdriver-manager start`
+* In a third terminal tab, run the following to run tests:
+  * Run Karma tests: `karma start test/karma.conf.js`
+  * Run Protractor tests: `npm run protractor test/protractor.conf.js`
 
-
+  
 * Create an `app/js` directory  
 
 TBC: http://stackoverflow.com/questions/894860/set-a-default-parameter-value-for-a-javascript-function
