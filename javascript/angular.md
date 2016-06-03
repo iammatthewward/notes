@@ -1,5 +1,3 @@
-***UNDER CONSTRUCTION***
-
 # Angular
   * Angular runs on the browser, meaning an Angular app can be a server-less static site.
   * Two way data binding: you can bind data to an input and Angular will automatically update what is bound to that on your Angular side. Angular magic! TBC
