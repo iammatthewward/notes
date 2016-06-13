@@ -35,13 +35,14 @@
   * `rails new app_name` with the your app name on place of 'app_name' creates a basic app
   * `rails new app_name -d postgresql -T` with the your app name on place of 'app_name' creates an app using a PostrgreSQL database (defined by `-d postgresql`), and turns off the built in Rails testing suite (defined by `-T`)
   * `bin/rake db:create` will create the database. Sometimes it is necessary to run `bin/rake db:create RAILS_ENV=test`
+  * add the `'haml-rails'` gem to your gemfile to allow the use of haml templates
 
 ### Testing
   * since the Rails testing suite is turned off, the following gems will need to be added to the gemfile in the test group, and bundle will need to to be run:
     - `gem rspec-rails`
     - `gem capybara`
+  * run `bin/rails g rspec:install` to install rspec
   * `require 'capybara/rails'` will need to be added in `spec/rails_helper.rb` below the other require statement to let you use Capybara in your testing environment
-  * run `bin/rails generate rspec:install` to install rspec
 
 ## Routing
   * Rails puts routing concerns in different files to separates routing concerns from controller action concerns. TBC
