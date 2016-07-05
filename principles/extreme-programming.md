@@ -1,5 +1,4 @@
 # Extreme Programming
-
 Extreme programming is a software development methodology, aimed at creating software with a stress on customer satisfaction. Rather than delivering everything in one go at a date far in the future, XP is designed to deliver features as they are needed and allows developers to respond to changes in requirements. XP has emphasis on teamwork: managers, customers, and developers are all equal partners in a team.
 
 ## XP Values
