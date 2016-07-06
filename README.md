@@ -8,8 +8,5 @@ Feel free to fork or these notes and change them as you wish. The majority of th
 
 A note on these notes: I've wrapped any code examples in `code blocks`, and rather than use actual examples I went down the route of wrapping anything which will be local to the code I am writing (such as variable names, parameter names etc.) in asterisks. Here's an example from my Angular notes: `ng-app="*appName*"`. This is to be clearer about what is actual syntax, and what is dependent on the code you're writing.
 
-## Install
-* Fork this repo
-
 ## Author
 [Matthew Ward](http://iammatthewward.co.uk)
