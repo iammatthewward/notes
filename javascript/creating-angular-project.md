@@ -195,7 +195,7 @@ onPrepare: function() {
 * Run `npm install jasmine-core --save-dev`
 * Run `npm install -g karma-cli`
 * Run `bower install angular-mocks --save-dev`
-* Run `run karma init`
+* Run `karma init`
 * Run `npm install karma-spec-reporter --save-dev`
 
 ### Create a Karma config file
