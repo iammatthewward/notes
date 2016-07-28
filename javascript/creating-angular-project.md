@@ -181,7 +181,7 @@ onPrepare: function() {
     var SpecReporter = require('jasmine-spec-reporter');
     jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: 'all'}));
    }
-}
+};
 ```
 * `seleniumAddress` points to the Selenium server URL.
 * `spec` points to the directory and file pattern where tests are held.
