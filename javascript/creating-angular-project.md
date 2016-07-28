@@ -149,7 +149,7 @@ toDoApp.service('ToDoService', ['$http', 'ToDoFactory', function($http, ToDoFact
 * Run `npm install bower -g --save-dev`This will install Bower for the project. The `--save-dev` part of the command saves bower in the `package.json` as a devDependency (dependencies only required for the dev environment).
 * Run `bower init`, hitting return on each question to accept the defaults. This will initialise Bower and create a `bower.json` file.
 * Make an app directory and cd into it.
-* Create a `.bowerrc` file in the root directory.
+* Create a `.bowerrc` file in the root of the app directory.
 * Inside the `.bowerrc` file, put the following code so that bower will install it's components inside of the app directory:
 ```
 {
