@@ -9,6 +9,7 @@
         eg. `var a = 2;` is broken up into `var`,`a`,`=`,`2`,`;` (whitespace may be tokenized if it is meaningful)
     * Parsing: taking the tokenized chunks and forming them into an **A**bstract **S**yntax **T**ree to represent the structure of the program
         eg. `var a = 2;` might form the tree: 
+        
         ```
         VariableDeclaration
             -> Identifier (value: a)
