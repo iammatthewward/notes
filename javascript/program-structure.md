@@ -1,0 +1,1 @@
+# JavaScript program structure
