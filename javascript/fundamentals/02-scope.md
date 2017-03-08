@@ -5,8 +5,8 @@
 * A set of rules for looking up variables by their identifier name.
 * Defines how and where a variable can be looked up.
 * There are two types of lookup, depending on where the variable appears in the assignment:
-		* LHS reference - target of an assignment (retrieve the variable rather than the assigned value)
-		* RHS reference - source of an assignment (retrieve a value rather than assign a value)
+	* LHS reference - target of an assignment (retrieve the variable rather than the assigned value)
+	* RHS reference - source of an assignment (retrieve a value rather than assign a value)
 * Code is compiled before being executed, so statements like `var a = 2` are split up into two steps:
 	* `var a`: variable declaration in the scope.
 	* `a = 2`: lookup the variable declaration and assign the value to it.
