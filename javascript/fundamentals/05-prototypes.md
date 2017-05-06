@@ -36,7 +36,7 @@ anotherObject.a; // 1
 
 * When an object has a `[[Prototype]]` chain, it must have an endpoint so that `[[Prototype]]` lookups have a place to end. This endpoint is a built-in object: `Object.prototype`;
 
-#### Setting & shadowing properties
+#### Setting & shadowing properties
 * When a property exists on both an object and somewhere in that object's `[[Prototype]]` chain, this is referred to as **shadowing**. The property that exists in the object is shadowing the property in the `[[Prototype]]` chain as this is lowest in the chain and will always be returned for a lookup on this object.
 * When setting a value on a property on an object, a chain of events occurs:
     * If the object has the property directly defined, the value is updated.
