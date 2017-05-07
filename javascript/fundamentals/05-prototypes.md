@@ -54,7 +54,7 @@ anotherObject.a; // 1
 * When an *instance* is created by calling `new MyFunc()`, it gets an internal `[[Prototype]]` link to the object that `MyFunc.prototype` is pointing at. This means that all *instances* have a `[[Prototype]]` link to the same object.
 * Unlike class based languages where calling `new` creates a copy from a blueprint (which is independent from other copies), calling `new` in JavaScript creates an object linked to all other objects created by calling `new` on that function.
 
-#### 'Constructors'
+#### 'Constructors'
 * In JavaScript, there is no such thing as a constructor in the sense of a constructor method on a class that is called to create an instance of that class.
 * When a function is called with `new`, it appears as if a conventional constructor method has been called as that function call will return an object. In reality, this is just a side effect; when a function is called with `new` it evaluates just like any other function, but it also returns an object.
 * This creates confusion because of some other odd behaviour. When a function is defined, it has a `constructor` property on it's `FunctionName.prototype` object, which is a reference back to the function.
