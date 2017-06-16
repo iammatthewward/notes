@@ -31,7 +31,7 @@ Notes from [Modern Web Development With Scala](https://leanpub.com/modern-web-de
 * If a method is used in a procedural way and will not have a return value, you can specify its return type as `Unit`
 * If methods do not have parameters, the parentheses can be omitted when defining the method. However this method will need to be called without parentheses too, so when calling this method it will look like you are accessing a value:
 
-```
+```scala
 def id = Math.random
 
 // This works
@@ -43,7 +43,7 @@ id() => Error to let you know this method does not accept parameters
 
 * Functions can be defined and assigned to a variable or constant
 
-```
+```scala
 // To specify the return type (a function from String to String)
 val greetVar: String => String = (name) => "Hello " + name
 
@@ -53,7 +53,7 @@ val greetVar = (name: String) => "Hello " + name
 
 * Methods can also be assigned to consts and vars by adding an underscore after the reference:
 
-```
+```scala
 def greet(name: String): String = "Hello " + name
 val sayHello = greet _
 
@@ -71,7 +71,7 @@ sayHello("Oreo") => "Hello Oreo"
 ### Collections
 * Scala lists are created and accessed in the same way, using parentheses: 
 
-```
+```scala
 val myList = List(1, 2, 3)
 myList(0) => 1
 
@@ -83,11 +83,10 @@ myArr(0) => 1
 * A lists type can be supplied in-between the keyword `List` and the parentheses containing the list items: `val myList = List[Short](1, 2, 3)`
 * By default, Scala uses immutable collections, which come with attached methods that create new collections rather than altering the existing collection. For example the `:+` method:
 
-```
+```scala
 val listA = List(1, 2 ,3)
 val listB = listA :+ 4
 
 listA => List(1, 2, 3)
 listB => List(1, 2, 3, 4)
 ```
-* 
