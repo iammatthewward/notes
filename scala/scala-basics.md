@@ -1,7 +1,7 @@
 # Scala notes
 Notes from [Modern Web Development With Scala](https://leanpub.com/modern-web-development-with-scala/read_sample)
 
-## Values
+## Values
 * `val` defines a constant
 * `var` defines a variable (rarely used)
 
@@ -9,7 +9,7 @@ Notes from [Modern Web Development With Scala](https://leanpub.com/modern-web-de
 * Types can be explicitly stated after the const or var name:
 		* `val myNum: Short = 4`
 
-## Methods
+## Methods
 * `def` defines a method
 * Methods are defined with their arguments in parentheses, and types must be supplied for arguments. Supplying the type of the return value is optional. If supplied, it appears after the parentheses:
 
@@ -61,14 +61,14 @@ sayHello("Oreo") => "Hello Oreo"
 ```
 
 
-## Type hierarchy
+## Type hierarchy
 ![Scala types](http://docs.scala-lang.org/tutorials/tour/unified-types-diagram.svg)
 * Everything in Scala has a type, and inherits from `Any`: `Any => [AnyRef, AnyVal]`
 * Primitives inherit from `AnyVal` and reference types inherit from `AnyRef`: `AnyRef => [List, Option, YourClass] AnyVal => [Double, Float, Boolean]`
 * Types can be checked using `isInstanceOf`: `"Hello".isInstanceOf[String] => Boolean: true`
 * Scala also has _bottom types_ which implicitly inherit from other types (more later)
 
-### Collections
+### Collections
 * Scala lists are created and accessed in the same way, using parentheses: 
 
 ```
