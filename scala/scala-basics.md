@@ -13,20 +13,20 @@ Notes from [Modern Web Development With Scala](https://leanpub.com/modern-web-de
 * `def` defines a method
 * Methods are defined with their arguments in parentheses, and types must be supplied for arguments. Supplying the type of the return value is optional. If supplied, it appears after the parentheses:
 
-	```
-	// No return type
-	def greet(name: String) = "Hello " + name
-	
-	// Return type
-	def greet(name: String): String = "Hello " + name
-	```
+```scala
+// No return type
+def greet(name: String) = "Hello " + name
+
+// Return type
+def greet(name: String): String = "Hello " + name
+```
 	
 * The body of a method can either be on the same line as the signature, or you can use a line break. Curly braces are not required:
 
-	```
-	def greet(name: String) =
-			"Hello " + name
-	```
+```scala
+def greet(name: String) =
+		"Hello " + name
+```
 * The last expression in a methods body will be it's return value - there is no need to use a return keyword.
 * If a method is used in a procedural way and will not have a return value, you can specify its return type as `Unit`
 * If methods do not have parameters, the parentheses can be omitted when defining the method. However this method will need to be called without parentheses too, so when calling this method it will look like you are accessing a value:
