@@ -35,10 +35,12 @@ def greet(name: String) =
 def id = Math.random
 
 // This works
-id => Double = 0.34234
+id 
+// => Double = 0.34234
 
 // This does not
-id() => Error to let you know this method does not accept parameters
+id() 
+// => Error to let you know this method does not accept parameters
 ```
 
 * Functions can be defined and assigned to a variable or constant
@@ -57,7 +59,8 @@ val greetVar = (name: String) => "Hello " + name
 def greet(name: String): String = "Hello " + name
 val sayHello = greet _
 
-sayHello("Oreo") => "Hello Oreo"
+sayHello("Oreo") 
+// => "Hello Oreo"
 ```
 
 
@@ -73,10 +76,12 @@ sayHello("Oreo") => "Hello Oreo"
 
 ```scala
 val myList = List(1, 2, 3)
-myList(0) => 1
+myList(0) 
+// => 1
 
 val myArr = Array(1, 2, 3)
-myArr(0) => 1
+myArr(0) 
+// => 1
 ```
 
 * Lists in Scala always have a type, and one will be inferred from the items in a list if no type is specified (if mixed types exist, the type will be `Any`
@@ -87,6 +92,69 @@ myArr(0) => 1
 val listA = List(1, 2 ,3)
 val listB = listA :+ 4
 
-listA => List(1, 2, 3)
-listB => List(1, 2, 3, 4)
+listA 
+// => List(1, 2, 3)
+listB 
+// => List(1, 2, 3, 4)
 ```
+
+### Packages and imports
+* Classes in Scala are organised into packages, so in order to use it you can either use the fully qualified name (FQN), or import the class:
+```
+// FQN:
+val myList = scala.collection.mutable.ListBuffer.empty[Int]
+
+// import
+import scala.collection.mutable.ListBuffer
+val myList = ListBuffer.empty[Int]
+```
+
+* All classes can be imported from a package using the _ wildcard: 
+```
+import scala.collection.mutable._
+val set = HashSet[Int]()
+```
+
+* Imports do not have to happen at the beginning of a file - they can be used within a class or method.
+
+### Classes
+* Classes can be defined using the `class` keyword, and are called on using the `new` keyword:
+```
+class Animal(name: String) {
+}
+
+val myPet = new Animal("Oreo)
+```
+
+* As in the above example, putting parameters inside parentheses defines a constructor for the class with those parameters. Any parameters defined here can be used within the body of the class, however will not be accessible properties on an instance of the class. In order to make these accessible they can be prepended with `val` (to make it immutable) or `var` (to make it mutable:
+```
+class Animal(name: String) {
+	def sayName(): unit =
+		println(name)
+}
+
+val myPet = new Animal("Oreo")
+myPet.sayName()
+// => prints "Oreo"
+
+myPet.name
+// => error - does not exist
+
+
+class Animal(val name: String) {
+	def sayName(): unit = 
+		println(name)
+}
+
+val myPet = new Animal("Oreo")
+myPet.sayName()
+// => prints "Oreo"
+
+myPet.name
+// => returns "Oreo"
+```
+
+* Default methods in a class (such as toString - which comes with every user defined class, as it implicitely extends AnyRef) can be overriden by putting the `override`keyword in from of `def` when defining the method
+* A class can have an `apply` method defined on it, which can be called in two ways: by calling `MyInstance.apply()` or adding parentheses after the instance name such as `MyInstance()`
+
+
