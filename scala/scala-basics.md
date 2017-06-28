@@ -100,7 +100,7 @@ listB
 
 ### Packages and imports
 * Classes in Scala are organised into packages, so in order to use it you can either use the fully qualified name (FQN), or import the class:
-```
+```scala
 // FQN:
 val myList = scala.collection.mutable.ListBuffer.empty[Int]
 
@@ -110,7 +110,7 @@ val myList = ListBuffer.empty[Int]
 ```
 
 * All classes can be imported from a package using the _ wildcard: 
-```
+```scala
 import scala.collection.mutable._
 val set = HashSet[Int]()
 ```
@@ -119,7 +119,7 @@ val set = HashSet[Int]()
 
 ### Classes
 * Classes can be defined using the `class` keyword, and are called on using the `new` keyword:
-```
+```scala
 class Animal(name: String) {
 }
 
@@ -127,7 +127,7 @@ val myPet = new Animal("Oreo)
 ```
 
 * As in the above example, putting parameters inside parentheses defines a constructor for the class with those parameters. Any parameters defined here can be used within the body of the class, however will not be accessible properties on an instance of the class. In order to make these accessible they can be prepended with `val` (to make it immutable) or `var` (to make it mutable:
-```
+```scala
 class Animal(name: String) {
 	def sayName(): unit =
 		println(name)
