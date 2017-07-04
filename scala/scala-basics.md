@@ -117,7 +117,7 @@ val set = HashSet[Int]()
 
 * Imports do not have to happen at the beginning of a file - they can be used within a class or method.
 
-### Classes
+### Classes
 * Classes can be defined using the `class` keyword, and are called on using the `new` keyword:
 ```scala
 class Animal(name: String) {
@@ -196,7 +196,7 @@ val randomOne = new Random("My contents")
 val randomTwo = new Random[Short](1)
 ```
 
-### Default/implicit values
+### Default/implicit values
 * Functions can be called with default or implicit values:
 ```scala
 def sayHi(name: String = "Oreo"): String = "Hello " + name
