@@ -142,7 +142,7 @@ myPet.name
 
 
 class Animal(val name: String) {
-	def sayName(): unit = 
+	def sayName(): Unit = 
 		println(name)
 }
 
@@ -156,5 +156,73 @@ myPet.name
 
 * Default methods in a class (such as toString - which comes with every user defined class, as it implicitely extends AnyRef) can be overriden by putting the `override`keyword in from of `def` when defining the method
 * A class can have an `apply` method defined on it, which can be called in two ways: by calling `MyInstance.apply()` or adding parentheses after the instance name such as `MyInstance()`
+
+### Objects
+* Scala has no `static` keyword, but singletons can be created by defining an `object`, whose methods are accessed without creating instances
+* The `apply` method can be created on objects similar to classes, though is called directly on the object
+* _Companion_ objects who share a name with a class, and are often used for defining additional methods and implicit values
+* A common pattern is to define an `apply` method on an object that allows you to call the object directly to create a new instance of the class:
+```scala
+class Person(val name: String) {
+	def sayHi(): Unit = println("Hi " + name)
+}
+
+object Person {
+	def apply(name: String): Person = new Person(name)
+}
+
+val matt = Person("Matt")
+val ayse = Person("Ayse")
+
+matt.sayHi()
+// => prints "Hi Matt"
+ayse.sayHi()
+// => prints "Hi Ayse"
+```
+
+* The above approach removes the need for directly using the `new` keyword, and is widely used in the standard library and others
+
+### Type paramaterization
+* Classes can be made more dynamic by making them parametrized, so that the type of the parameters do not have to be specified up front, and can instead be inferred (or specified at invocation):
+```scala
+class Random[T](val contents: T) {
+	def getContents: T = contents
+}
+
+// inferred type
+val randomOne = new Random("My contents")
+
+// specified
+val randomTwo = new Random[Short](1)
+```
+
+### Default/implicit values
+* Functions can be called with default or implicit values:
+```scala
+def sayHi(name: String = "Oreo"): String = "Hello " + name
+// or
+def sayHi(implicit name: String): String = "Hello " + name
+```
+
+* With the first example, the function has a default value and will return a string with either a passed name, or the default if no name is passed: `sayHi()` or `sayHi("Matt")`
+* With the second example, the function has an implicit value and will use an implicit value of the same type in the surrounding scope if called without a parameter. In this instance the function is called without parentheses. If two implcit values of the same type exist it will fail due to ambiguity:
+```scala
+sayHi
+// => fails due to no implicit value
+
+implicit val anything: String = "Oreo"
+sayHi
+// => returns "Hello Oreo"
+
+implicit val something: String = "Matt"
+sayHi
+// => fails due to ambiguity
+
+sayHi("Ayse")
+// => returns "Hello Ayse"
+```
+
+* Implicit values can be created in a scope or imported if already defined
+* Scala will also look for implicit values in companion objects
 
 
